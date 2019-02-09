@@ -63,8 +63,7 @@ if(!empty($user) && !empty($wordlist)) {
     foreach($passlist as $password) {
         $pass = substr($password, 0, strlen($password) - 1);
         if(check(urlencode($user), urlencode($pass))) {
-            print $pass." \033[7m\033[32m✅\033[27m ".$green."OK, 
-Cocok\n".$nc;
+            print $pass." \033[7m\033[32m✅\033[27m ".$green."OK, Cocok\n".$nc;
         } else {
             print $pass." \033[7m\033[1;31m❌\033[27m ".$red."Gak Cocok\n".$nc;
         }
