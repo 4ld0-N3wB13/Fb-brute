@@ -9,7 +9,7 @@ function check($user, $pass) {
     $kuki = 'kuki.txt';
     touch($kuki);
 $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'https://free.facebook.com/login.php');
+    curl_setopt($ch, CURLOPT_URL, 'https://m.facebook.com/login.php');
     curl_setopt($ch, CURLOPT_POSTFIELDS, 'email='.$user.'&pass='.$pass.'&login=Login');
     curl_setopt($ch, CURLOPT_POST, 1);
     curl_setopt($ch, CURLOPT_HEADER, 0);
@@ -20,7 +20,7 @@ $ch = curl_init();
     curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
     curl_setopt($ch, CURLOPT_USERAGENT, $useragent);
-    curl_setopt($ch, CURLOPT_REFERER, 'https://free.facebook.com');
+    curl_setopt($ch, CURLOPT_REFERER, 'https://m.facebook.com');
     $output = curl_exec($ch) or die('periksa koneksi internet anda
 '.$url);
     if(stristr($output, '<title>Facebook</title>') || stristr($output, 'id="checkpointSubmitButton"')) {
